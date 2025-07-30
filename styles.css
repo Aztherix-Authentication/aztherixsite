@@ -266,7 +266,50 @@ nav .btn-demo:hover, nav .btn-demo:focus {
   margin-bottom: 1rem;
 }
 
-.plan-card
+.plan-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #5ff;
+}
+
+.plan-card ul {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: #9ee9f9;
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.plan-card ul li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.plan-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0ff;
+}
+
+.plan-card .btn-buy {
+  display: inline-block;
+  background: #0ff;
+  color: #000;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #0ff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card .btn-buy:hover {
+  background: #00e0e0;
+  box-shadow: 0 0 30px #00e0e0;
+}
 
 
 /* Footer */
