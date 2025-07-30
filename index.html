@@ -8,6 +8,43 @@
 <link href="css/styles.css" rel="stylesheet" />
 <!-- Google Fonts - Cyber/Tech vibe -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<style>
+  /* Add some inline styles to handle button hover and colors consistent with your theme */
+  .btn-buy {
+    background: #0ff;
+    color: #000;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 0 25px #0ff;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-buy:hover {
+    background: #00e0e0;
+    box-shadow: 0 0 35px #00e0e0;
+  }
+  .btn-demo {
+    background: transparent;
+    border: 2px solid #0ff;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    color: #0ff;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-demo:hover {
+    background: #0ff;
+    color: #000;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+  }
+</style>
 </head>
 <body>
 <header>
@@ -32,8 +69,8 @@
       <h1>Next-Level Discord Authentication</h1>
       <p>Secure your Discord community with Aztherix Authentication — Powerful, Affordable, and Fully Customizable.</p>
       <div class="hero-buttons">
-        <a href="https://buy.stripe.com/example" target="_blank" class="btn-buy">Buy Now</a>
-        <a href="contact.html" class="btn-demo">Try a Free Demo</a>
+        <a href="#" id="buy-btn" class="btn-buy" aria-label="Buy Aztherix Authentication Plan">Buy Now</a>
+        <button id="demo-btn" class="btn-demo" aria-label="Try a Free Demo">Try a Free Demo</button>
       </div>
     </div>
   </section>
@@ -75,6 +112,21 @@
   </div>
 </footer>
 
-<script src="js/scripts.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const stripe = Stripe('pk_test_YourPublishableKeyHere'); // Replace with your Stripe publishable key
+
+  document.getElementById('buy-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Replace with your Stripe Checkout session URL or Payment Link
+    const sessionUrl = "https://checkout.stripe.com/pay/cs_test_a1b2c3d4e5f6g7h8i9j0";
+    window.location.href = sessionUrl;
+  });
+
+  document.getElementById('demo-btn').addEventListener('click', () => {
+    window.location.href = 'mailto:aztherix.co@gmail.com?subject=Aztherix%20Free%20Demo%20Request';
+  });
+</script>
+
 </body>
 </html>
