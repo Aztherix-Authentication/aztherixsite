@@ -311,6 +311,53 @@ nav .btn-demo:hover, nav .btn-demo:focus {
   box-shadow: 0 0 30px #00e0e0;
 }
 
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 0;
+  color: #9ee9f9;
+}
+
+.steps-list li {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 3.5rem;
+}
+
+.steps-list li h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #0ff;
+  margin-bottom: 0.5rem;
+}
+
+.steps-list li p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #b2f0ff;
+}
+
+.steps-list li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #0ff;
+  color: #000;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2.5rem;
+  box-shadow: 0 0 12px #0ff;
+}
+
+
 
 /* Footer */
 footer {
